@@ -1,0 +1,36 @@
+
+<table id="mitabla" class="table table-striped table-responsive-md btn-table">
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>IMG</th>
+        <th>Categoría</th>
+        <th>Descripción</th>
+    </tr>
+</thead>
+<tbody> 
+    {{#products}}
+    <tr>
+        <br>
+        <td>{{_id}}</td>
+        <td>{{name}}</td>
+        <td>{{price}}</td>
+        <td>{{picture}}</td>
+        <td>{{category}}</td>
+        <td>{{description}}</td>
+        <td>
+            <form action="/api/product/{{_id}}" method="GET">
+                <button class="btn btn-primary" type="submit">Editar</button>
+            </form>
+            </td>
+            <td>
+            <form action="/api/product/{{_id}}" method="GET">
+                <button class="btn btn-primary" type="submit">Eliminar</button>
+            </form>
+            </td>
+    </tr>
+    {{/products}}
+</tbody>
+</table>
